@@ -44,6 +44,21 @@ const isEmail = (email) => {
       valid: Object.keys(errors).length === 0 ? true : false
     };
   };
+  
+  export const validateStudentCreation = (data) => {
+    let errors = {};
+
+    if(isEmpty(data.firstName)) errors.firstName = 'First name must not be empty'
+    if(isEmpty(data.lastName)) errors.lastName = 'Last name must not be empty'
+    if(isEmpty(data.address)) errors.address = 'Address must not be empty'
+    if(isEmpty(data.phoneNumber)) errors.phoneNumber = 'Phone number must not be empty'
+    if (isMobile(data.phoneNumber)) errors.phoneNumber = 'Phone number is Invalid';
+
+    return {
+      errors,
+      valid: Object.keys(errors).length === 0 ? true : false
+    };
+  };
 
   export const validateLoginData = (data) => {
     let errors = {};

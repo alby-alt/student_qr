@@ -59,7 +59,7 @@ app.use(errorHandler); // handle request error
 
 app.listen(
     PORT,
-    console.log(`Server running in ${[process.env.NOTE_ENV]} mode with port ${PORT}`.yellow.bold));
+    console.log(`Server running in ${[process.env.NODE_ENV]} mode with port ${PORT}`.yellow.bold));
   
   process.on("unhandledRejection", (err, promise) => {
 //   console.log(`Error: ${err.message}`.red.bold);
